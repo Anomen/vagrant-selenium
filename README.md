@@ -9,7 +9,9 @@ Selenium allows you to automate tests in Web Browsers. To do so, you need to hav
 
 1. Install [Vagrant](https://www.vagrantup.com)
 2. Clone this git repository
-3. Run the command `vagrant up`
+3. run `git submodule init` from within your checkout directory
+4. run `git submodule update` from within your checkout directory
+5. Run the command `vagrant up`
 
 This vagrant works for *Virtualbox*, on a 64 bits machine.
 
