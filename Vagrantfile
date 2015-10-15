@@ -1,3 +1,5 @@
+require './vagrant-provision-reboot/vagrant-provision-reboot-plugin'
+
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -11,4 +13,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :virtualbox do |vb|
     vb.gui = true
   end
+
+  config.vm.provision :unix_reboot
 end
