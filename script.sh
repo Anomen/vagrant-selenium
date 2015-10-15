@@ -28,15 +28,10 @@ echo "ok"
 #=========================================================
 echo "Download the latest chrome..."
 #=========================================================
-wget --quiet "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-sudo apt-get install libpango1.0-0 -y -f
-sudo apt-get install libxss1 -y -f
-sudo apt-get install fonts-liberation -y -f
-sudo apt-get install libappindicator1 -y -f
-sudo apt-get install xdg-utils -y -f
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo rm google-chrome-stable_current_amd64.deb
-sudo apt-get install -y -f
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable -y -f
 
 #=========================================================
 echo "Download latest selenium server..."
@@ -92,3 +87,8 @@ echo -n "Add host alias..."
 #=========================================================
 echo "192.168.33.1 host" >> /etc/hosts
 echo "ok"
+
+#=========================================================
+echo -n "Updating packages..."
+#=========================================================
+sudo apt-get upgrade -y -f
