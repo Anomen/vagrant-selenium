@@ -89,6 +89,15 @@ echo "192.168.33.1 host" >> /etc/hosts
 echo "ok"
 
 #=========================================================
+echo "Download and setup Java 8..."
+#=========================================================
+
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo apt-get update -y
+sudo apt-get install oracle-java8-installer -y
+sudo apt-get install oracle-java8-set-default -y
+
+#=========================================================
 echo "Reboot the VM"
 #=========================================================
 sudo reboot
