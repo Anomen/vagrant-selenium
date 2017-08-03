@@ -36,7 +36,7 @@ sudo apt-get install -y -f
 #=========================================================
 echo "Download latest selenium server..."
 #=========================================================
-SELENIUM_VERSION=$(curl "https://selenium-release.storage.googleapis.com/" | perl -n -e'/.*<Key>([^>]+selenium-server-standalone[^<]+)/ && print $1')
+SELENIUM_VERSION=$(curl "https://selenium-release.storage.googleapis.com/" | perl -n -e'/.*<Key>([^>]+selenium-server-standalone-2[^<]+)/ && print $1')
 wget "https://selenium-release.storage.googleapis.com/${SELENIUM_VERSION}" -O selenium-server-standalone.jar
 chown vagrant:vagrant selenium-server-standalone.jar
 
